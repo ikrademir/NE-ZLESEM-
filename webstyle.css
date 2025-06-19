@@ -1,0 +1,704 @@
+/* 230229076 İkra Demir
+   230229051 Gülsüm Çakmak
+   230229078 Yıldız Ay 
+*/
+
+#filmTuru, #sıralamar, #top{
+    background-color: aliceblue;    /*ana sayfada en üstte yer alan seçeneklerin özellikleri */
+    color: rgb(243,5,5);
+}
+
+header {
+    background: #031317;
+    height:125px;
+    color: rgb(243,5,5);            /*ana sayfada en üstte yer alan başlığın özellikleri */
+    text-shadow: 2px 2px 5px gray;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: rgb(243,5,5);      /*ana sayfada en üstte yer alan anasayfa yazısının özellikleri */
+    margin: 0 30px;
+    text-decoration: none;
+}
+
+.gündemdekiler {    /*gündemdekıler kapsayici divi icin ayarlamalar*/
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    gap: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.gündem {   /*her gundem divi icin ayarlamalar*/
+    width: 250px;
+    height:320;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    flex-shrink: 0;
+}
+.gündem img{    /* her bir foto icin ayarlamalar */
+width: 250px;
+height: 320px;
+border-radius: 10px;
+object-fit: cover;
+
+}
+.img {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.rank{  /*foto numaraları icin rank ayarı*/
+    position:absolute;
+    bottom: 10px;
+    font-size: 4em;
+    left: 10px;
+    font-weight: bold;
+    color: rgb(243,5,5);
+    text-shadow:2px 2px 4px rgba(0, 0, 0, 0.7) ;
+}
+
+
+.giriş {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 100px;
+    text-align: center;
+    border-radius: 10px;
+    background-image: url(img/netflixgoogle.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.girişş {   /*soru cevaba götürecek olan metnin başlığının özellikleri*/
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgb(83, 192, 83);
+}
+
+.giriş p {   /*soru cevaba götürecek olan metnin özellikleri*/
+    color: rgb(83, 192, 83);
+    font-size: 20px;
+    font-style: oblique;
+    margin-bottom: 10px;
+}
+
+.buton {  /*soru cevaba götürecek olan butonun özellikleri*/
+    background-color: rgb(83, 192, 83);
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.buton:hover {     /*soru cevaba götürecek olan butonun üzerine gelince rengi değişir.*/
+    background-color: #c918a9;
+}
+
+div.sıkça {      /* site hakkındaki soru-cevap için olan soru ve cevapların hepsini kapsar bu yüzden o bölgenin arka renklendirilmesi için kullandık.*/
+    background-color: black;
+    color: black;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px hwb(301 31% 35% / 0.1);
+
+}
+
+.sıksoru {  /* site hakkındaki soru-cevap da soru kısmının özellikleri */
+    padding: 15px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: rgb(83, 192, 83);
+}
+
+.sıkcevap:hover{    /* site hakkındaki soru-cevap da sorunun altındaki siyaha imleci getirince sarı cevaplar görünür */
+    padding: 15px 20px;
+    background-color: #d2da64;
+    border-top: 1px solid rgb(83, 192, 83);
+    opacity: 1;
+}
+tr>td>a{
+    text-decoration: none;
+    
+    }
+    table.secim {   /*1.soru mod seç kısmı icin table ayarları*/
+        background-color: rgb(15, 15, 15);
+        border-color:black; 
+        text-align:center;
+        padding: 25px;
+        width: 800px;
+        height: 200px;
+        margin-top:6px;
+    }
+    
+    
+    table.secim td:hover{
+        background-color: rgb(248, 88, 29);
+    }
+    .container 
+        {/*ikinci soru kapsayıcı divi*/
+          width: 400px;
+          background-color: rgb(248, 88, 29);
+          padding: 20px;
+          border-radius: 10px;
+          margin-top: 20px;
+        }
+    
+        .question {   /* soru yazıları icin ayarlamalar*/
+          font-size: 18px;
+          font-weight: bold;
+          margin-bottom: 20px;
+        }
+    
+        .option {    /*2. sorunun her bır sorusu icin div ayarları*/ 
+          background-color: rgb(248, 88, 29);
+          padding: 15px;
+          margin-bottom: 10px;
+          border: 2px solid black;
+          border-radius: 5px;
+        }
+    div.option:hover{
+        color: rgb(248, 88, 29);
+        background-color: rgb(238, 187, 124);
+    }
+    /*3.soru kısmı*/
+    div.box:hover{
+        color: rgb(248, 88, 29);
+         background-color: rgb(238, 187, 124);
+    }
+        .title {   /* 3.sorunun asıl ana sorusu*/
+          background-color: rgb(248, 88, 29);
+          padding: 10px;
+          font-weight: bold;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+        .grid {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+        .box {   /*3. sorunun her bır sorusu icin div ayarları*/ 
+          width: 48%;
+          background-color: rgb(248, 88, 29);
+          padding: 10px;
+          border: 1px solid black;
+          border-radius: 5px;
+        }
+    /*4. soru kısmı*/
+        .soru {     /* 4.sorunun asıl ana sorusu */
+          font-size: 18px;
+          font-weight: bold;
+          margin-bottom: 20px;
+          background-color:rgb(248, 88, 29) ;
+          padding: 10px ;
+          margin-top: 10px;
+        }
+        .years {      /*4. soru kapsayıcı divi*/
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px; /* Sütunlar ve satırlar arasında boşluk */
+          
+        }
+        .aralik {    /*4. sorunun her bır sorusu icin div ayarları*/ 
+          background-color: rgb(248, 88, 29);
+          padding: 15px;
+          border: 2px solid black;
+          border-radius: 5px;
+          min-height: 80px;
+          display: flex;
+          align-items: center;
+          font-size:x-large;
+        }
+        div.aralik:hover{
+            color: rgb(248, 88, 29);
+            background-color: rgb(238, 187, 124);
+        }
+       
+        
+        .topic{
+            font-size: medium;
+        }
+        .center-container {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+        
+        
+        .center-container table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        
+        .modsec {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .container2 {          
+            display: flex;
+            flex-direction: column;
+            gap: 200px;
+            width: 100%;                   /* Film tanıtımları için açılan div'in class'ı */
+            max-width: 800px;              /* Çerçevelerini burada oluşturduk. */
+            box-sizing: border-box;
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+        }
+          
+        .c {
+            display: flex;
+            align-items: center; 
+            width: 100%;
+            min-height: 500px;
+            overflow: hidden;                 /* Tüm filmleri bir class'ta topladık */
+            cursor: pointer;                  /* Çerçeveleri birbirinden ayırıp birkaç ayar değiştirdik. */
+            padding: 12px;
+            padding-left: 80px;
+            padding-right: 30px;
+            gap: 12px;
+            background-color: #222;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+    
+          
+       
+          
+        .info {
+            display: flex;
+            flex-direction: column;            /* Film tanıtımlarının genel özelliklerini burada ayarladık. */
+            justify-content: center;
+            font-family: fantasy;
+        }
+        .links {
+            display: flex;
+            flex-direction: column;            /* Linklerin genel özelliklerini burada ayarladık. */
+            justify-content: center;
+        }
+        .inside-info-2 {
+            color: rgb(249, 251, 252);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;       /* Çıkış tarihini,yaş sınırını,türünü ve IMDB puanını burada ortak ayarladık. */
+        }
+        .stars{
+            color: yellow;
+        }
+        .age, .genres, .IMDB{
+            margin-left: 6px;
+        }
+
+
+        /* Bundan sonrası filmlerin tanıtıldığı kutucukların rengini,arka plan resmini özel olarak ayarlamak için yazıldı. */
+        .first{
+            background-image: url(img/Dune\ logo.jpeg);
+            background-size: cover; 
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: 0 0 .5rem rgb(134, 8, 18);
+            outline: 2px solid rgb(134, 8, 18);
+        }
+        .second{
+            background-image: url(img/_.jpeg);
+            background-size: cover; 
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: 0 0 .5rem rgb(19, 155, 84);
+            outline: 2px solid rgb(19, 155, 84);
+        }
+        .third{
+            background-image: url(img/tenthings.jpeg);
+            background-size: cover; 
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: 0 0 .5rem #fff;
+            outline: 2px solid #fff;
+        }
+        .fourth{
+            background-image: url(img/ekip.jpeg);
+            background-size: cover; 
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: 0 0 .5rem black;
+            outline: 2px solid black;
+        }
+        .fifth{
+            background-image: url(img/gladyator.jpeg);
+            background-size: cover; 
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: 0 0 .5rem rgb(101, 38, 43);
+            outline: 2px solid rgb(101, 38, 43);
+        }
+        .sixth{
+            background-image: url(img/cıglık.jpeg);
+            background-size: cover; 
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: 0 0 .5rem black;
+            outline: 2px solid black;
+        }
+        
+        /* Buradan sonrası da yazıların rengini özel olarak ayarlamak için yazıldı. */
+        .first .info{
+            color: antiquewhite;
+        }
+        .second .info{
+            color: rgb(19, 155, 84);
+        }
+        .third .info{
+            color: #fff;
+        }
+        .fourth .info{
+            color: #fff;
+        }
+        .fifth .info{
+            color: #fff;
+        }
+        .sixth .info{
+            color: #fff;
+        }
+
+
+        /* API'dan gelen filmler için ek stiller */
+.gündemdekiler::-webkit-scrollbar {
+    height: 8px;
+}
+
+.gündemdekiler::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.gündemdekiler::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.gündemdekiler::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Film kartları için hover efekti */
+.gündem:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Arama çubuğu için stil */
+.aramaamotoru {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 15px;
+}
+
+.butonn {
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.butonn:hover {
+    background-color: #f40612;
+}
+
+/* Film detay sayfası için responsive tasarım */
+@media (max-width: 768px) {
+    .c {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .info, .links {
+        width: 100%;
+    }
+    
+    .gündemdekiler {
+        flex-wrap: wrap;
+        overflow-x: hidden;
+    }
+    
+    .gündem {
+        width: 150px;
+        margin-bottom: 15px;
+    }
+    
+    .gündem img {
+        width: 150px;
+        height: 200px;
+    }
+}
+.movie-detail-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.detail-container {
+    display: flex;
+    max-width: 800px;
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.detail-poster {
+    width: 300px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.detail-info {
+    flex: 1;
+}
+
+.trailer-button {
+    display: inline-block;
+    background-color: #e50914;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 15px;
+}
+.movie-overview {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    max-height: 50%;
+    overflow: auto;
+}
+
+.gündem:hover .movie-overview {
+    transform: translateY(0);
+}
+
+.gündem {
+    position: relative;
+    overflow: hidden;
+}
+.movie-detail-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-container {
+    display: flex;
+    max-width: 800px;
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.detail-poster {
+    width: 300px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.detail-info {
+    color: white;
+    max-width: 500px;
+}
+
+.trailer-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e50914;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.body {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.arama-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.aramaamotoru {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+.butonn {
+    padding: 10px 15px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.filtreler {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.movie-overview {
+    padding: 15px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Modal arka planı */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    overflow: auto;
+}
+
+/* Modal içerik kutusu */
+.modal-content {
+    background-color: #121212;
+    margin: 3% auto;
+    padding: 25px;
+    border-radius: 10px;
+    width: 85%;
+    max-width: 900px;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+/* Kapatma butonu */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 15px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: white;
+}
+
+/* Film bilgisi konteynırı */
+.movie-info-container {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+/* Film posteri */
+.movie-poster {
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Film detayları */
+.movie-details {
+    flex: 1;
+    min-width: 300px;
+}
+
+.movie-title {
+    color: #f5c518;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.movie-meta {
+    margin: 10px 0;
+    color: #ccc;
+    font-size: 16px;
+}
+
+.movie-overview {
+    margin-top: 20px;
+}
+
+.movie-overview h3 {
+    color: #e50914;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.movie-overview p {
+    line-height: 1.6;
+    font-size: 16px;
+    color: #e0e0e0;
+}
+
+/* Arkaplan görseli */
+.backdrop-image {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.section {
+    display: none;
+}
